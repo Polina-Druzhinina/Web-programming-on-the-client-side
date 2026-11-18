@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор визиток</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="konst_vis">
+        <h2 class="konst_title">Конструктор визиток</h2>
+
+        <div class="form-group">
+            <label>Наименование организации</label>
+            <input type="text" id="in-org" value="ООО «Ориентир»">
+        </div>
+
+        <div class="form-group form-row">
+            <div class="field-wrap">
+                <label>Фамилия, имя, отчество</label>
+                <input type="text" id="in-fio" value="Фёдоров Иван Семенович">
+            </div>
+            <div class="tools-wrap">
+                <div class="tool-group" id="fio-align">
+                    <button class="t-btn" data-val="left">◧</button>
+                    <button class="t-btn active" data-val="center">◫</button>
+                    <button class="t-btn" data-val="right">◨</button>
+                </div>
+                <div class="tool-group" id="fio-size">
+                    <button class="t-btn" data-val="24">24</button>
+                    <button class="t-btn active" data-val="26">26</button>
+                    <button class="t-btn" data-val="28">28</button>
+                </div>
+            </div>
+        </div>
+        <div class="color-palette" id="fio-color">
+            <button class="color-dot active" data-color="#202020" style="background:#202020"></button>
+            <button class="color-dot" data-color="#1E90FF" style="background:#1E90FF"></button>
+            <button class="color-dot" data-color="#FF5252" style="background:#FF5252"></button>
+            <button class="color-dot" data-color="#2ECC71" style="background:#2ECC71"></button>
+            <button class="color-dot" data-color="#FFC107" style="background:#FFC107"></button>
+            <button class="color-dot" data-color="#E91E63" style="background:#E91E63"></button>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="field-wrap">
+                <label>Должность</label>
+                <input type="text" id="in-pos" value="Менеджер по развитию">
+            </div>
+            <div class="tools-wrap">
+                <div class="tool-group" id="pos-align">
+                    <button class="t-btn" data-val="left">◧</button>
+                    <button class="t-btn active" data-val="center">◫</button>
+                    <button class="t-btn" data-val="right">◨</button>
+                </div>
+                <div class="tool-group" id="pos-size">
+                    <button class="t-btn" data-val="14">14</button>
+                    <button class="t-btn active" data-val="16">16</button>
+                    <button class="t-btn" data-val="18">18</button>
+                </div>
+            </div>
+        </div>
+        <div class="color-palette" id="pos-color">
+            <button class="color-dot active" data-color="#202020" style="background:#202020"></button>
+            <button class="color-dot" data-color="#404040" style="background:#404040"></button>
+            <button class="color-dot" data-color="#707070" style="background:#707070"></button>
+            <button class="color-dot" data-color="#A9A9A9" style="background:#A9A9A9"></button>
+            <button class="color-dot" data-color="#D3D3D3" style="background:#D3D3D3"></button>
+            <button class="color-dot" data-color="#FFFFFF" style="background:#FFFFFF"></button>
+        </div>
+
+        <div class="form-group">
+            <label>Телефон</label>
+            <div id="phones-container">
+                <div class="phone-row">
+                    <input type="text" class="phone-input" value="8 (999) 123-45-67">
+                    <button class="del-btn" type="button" hidden>−</button>
+                </div>
+            </div>
+            <button class="add-btn" id="add-phone" type="button">+ Добавить ещё один телефон</button>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="field-wrap">
+                <label>E-mail</label>
+                <input type="text" id="in-email" value="fedorov.is@orientir.org">
+            </div>
+            <label class="checkbox-wrap">
+                <input type="checkbox" id="chk-email" checked> Отображать
+            </label>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="field-wrap">
+                <label>Адрес</label>
+                <input type="text" id="in-address" value="Иркутск, Байкальская, 421, оф. 12">
+            </div>
+            <label class="checkbox-wrap">
+                <input type="checkbox" id="chk-address" checked> Отображать
+            </label>
+        </div>
+
+        <button class="btn-apply" onclick="updateCard()">Применить</button>
+    </div>
+
+    <div class="main_vis">
+        <p class="card-org" id="out-org">ООО «Ориентир»</p>
+        <p class="card-fio" id="out-fio">Фёдоров Иван Семенович</p>
+        <p class="card-pos" id="out-pos">Менеджер по развитию</p>
+        <div id="out-phones-container"></div>
+        <p class="card-email" id="out-email">fedorov.is@orientir.org</p>
+        <p class="card-address" id="out-address">Иркутск, Байкальская, 421, оф. 12</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
